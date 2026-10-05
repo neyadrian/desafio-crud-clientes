@@ -29,22 +29,18 @@ public class ClientService {
         return repository.save(client);
     }
 
-    // 4. Atualizar recurso
     @Transactional
     public Client update(Long id, Client clientData) {
-        // Verifica se existe para lançar a exceção do 404 caso não encontre
         if (!repository.existsById(id)) {
             throw new ResourceNotFoundException("Id não encontrado");
         }
 
-        clientData.setId(id); // Garante que estamos a atualizar o ID correto
+        clientData.setId(id); 
         return repository.save(clientData);
     }
 
-    // 5. Deletar recurso
     @Transactional
     public void delete(Long id) {
-        // Verifica se existe para lançar a exceção do 404 caso não encontre
         if (!repository.existsById(id)) {
             throw new ResourceNotFoundException("Id não encontrado");
         }
