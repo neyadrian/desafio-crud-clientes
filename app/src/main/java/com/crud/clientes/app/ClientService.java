@@ -35,7 +35,7 @@ public class ClientService {
             throw new ResourceNotFoundException("Id não encontrado");
         }
 
-        clientData.setId(id); 
+        clientData.setId(id);
         return repository.save(clientData);
     }
 
